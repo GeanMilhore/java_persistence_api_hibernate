@@ -3,10 +3,7 @@ package br.com.alura.loja.modelo;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -27,7 +24,10 @@ public class Produto {
 	
 	@ManyToOne
 	private Categoria categoria; // jpa automatica identifica relacionamento
-		
+	
+	public Produto() {
+	}
+
 	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
 		this.nome = nome;
 		this.descricao = descricao;
